@@ -1,0 +1,223 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/******************************************************************************************************* 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+*******************************************************************************************************/
+
+* { box-sizing: border-box}
+
+@font-face {
+	font-family: "TaylorGothic";
+	src: url("font/TaylorGothic.woff2") format("woff2"),
+		 url("font/TaylorGothic.woff") format("woff");
+}
+
+/******************************************************************************************************* 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+*******************************************************************************************************/
+
+html {
+    color: rgb(255, 255, 255, 0.7);
+    font-family: "TaylorGothic", sans-serif;
+}
+
+.wrapper {
+    background-image: url(img/bg.jpg);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 45px;
+}
+
+input {
+    height: 4em;
+    width: 40rem;
+    background: rgba(132, 145, 206, 0.5);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 5px 4px rgb(0, 0, 0, 0.5);
+    text-align: center;
+    padding-top: 12px;
+}
+
+@media all and (max-width: 1275px) {input{height:3.7em;width:30rem}}
+
+input::placeholder{
+    font-family: "TaylorGothic";
+    font-size: 2rem;
+    color: rgb(255, 255, 255, 0.7);
+}
+
+img {
+    margin-bottom: 20px;
+    /* position: absolute; */
+}
+
+#front {
+    width: 35%;
+}
+
+#back {
+    width: 40%;
+    display: none;
+}
+
+#ballAnswer {
+    position: absolute;
+    top: 47%;
+    display: none;
+    padding-left: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+@media all and (max-width: 1550px) {#ballAnswer{padding-left: 20px; font-size: 0.8em}}
+@media all and (max-width: 1400px) {#ballAnswer{padding-left: 20px; font-size: 0.7em}}
+@media all and (max-width: 1275px) {#ballAnswer{padding-left: 20px; font-size: 0.6em;top:48%; padding-top: 2px}}
+
+
+
+.buttons {
+    display: flex;
+    gap: 70px;
+    align-items: center;
+}
+
+#button, #reset {
+    font-family: inherit;
+    color: inherit;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px 20px rgb(55, 70, 158);
+    padding-top: 6px;
+}
+
+#button {
+    height: 2.3em;
+    width: 22rem;
+    font-size: 2.2rem;
+}
+
+@media all and (max-width: 1275px) {#button{width:18rem; height:2em;font-size:1.8rem}}
+
+#button:hover, #reset:hover {
+    cursor: pointer;
+    -webkit-animation: pulsate-fwd 1s linear infinite both;
+	animation: pulsate-fwd 1s linear infinite both;
+}
+
+#reset {
+    height: 2.5em;
+    width: 8rem;
+    font-size: 1.5rem;
+    display: none;
+}
+
+@media all and (max-width: 1275px) {#reset{width:6rem; height:2.2em;font-size:1rem}}
+
+/******************************************************************************************************* 
+~~~~~~~~~~~~~~~~~~~ ANIMATIONS / KEYFRAMES
+*******************************************************************************************************/
+
+@-webkit-keyframes scale-down-center {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	100% {
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+  }
+@keyframes scale-down-center {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	100% {
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+  }
+  
+
+  @-webkit-keyframes pulsate-fwd {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes pulsate-fwd {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
