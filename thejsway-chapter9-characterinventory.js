@@ -46,7 +46,8 @@ class Character {
           target.health = 0;
           const bonusXP = 10;
           const bonusGold = target.gold;
-          const bonusKeys = target.keys;
+          const bonusKeys = 
+          target.keys;
           console.log(
             `${this.name} eliminated ${target.name} and wins ${bonusXP} experience points, ${bonusGold} gold, and ${bonusKeys} key(s).`
           );
