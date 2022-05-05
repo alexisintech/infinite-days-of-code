@@ -40,6 +40,19 @@ class Dog extends Animal{
     }    
 }
 
+class Cat extends Animal{
+    constructor(name,breed){
+        super(name)
+        this._breed = breed
+    }
+    get breed(){
+        return this._breed
+    }
+    speak(){
+        console.log(`${this.name} meows`)
+    }    
+}
+
 // My code (addition):
 
 class Snake extends Animal{
@@ -61,6 +74,15 @@ class Snake extends Animal{
 }
 
 let machi = new Dog('The Machine','Pitbull');
+let luna = new Cat('Luna', 'BIGCHUNKFLUFF')
 let blaze = new Snake('Blaze', 'Sistrurus miliarius', 'Pygmy Rattlesnake');
 
 blaze
+
+
+let farm = [machi, luna, blaze]
+
+// polymorphism - each of the descendant siblings have their own interfaces (speak()). getting rid of if..else if, or switch cases
+for( a of farm ){
+    a.speak()
+}
